@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="QUART-Online: Latency-Free Large Multimodal Language Model for Quadruped Robot Learning">
+  <meta name="keywords" content="QUART, QUART-Online, quadruped">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    QUART-Online
+  </title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/dog.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://quart-online.github.io">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="quart.html">
+            QUART
+          </a>
+          <a class="navbar-item" href="https://quart-online.github.io">
+            QUART-Online
+          </a>
+
+          <!-- <a class="project2" href="https://xxx2.github.io">
+            xxx2
+          </a> -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body" style="padding:3rem 1.5rem 0.5rem 1.5rem">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title" >
+            QUAR-VLA: Vision-Language-Action Model for Quadruped Robots 
+        </h1> 
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://dingpx.github.io/">Pengxiang Ding</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="#">Han Zhao</a><sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="#">Wenxuan Song</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="#">Wenjie Zhang</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://kyonhuang.top/">Siteng Huang</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="#">Ningxi Yang</a><sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://milab.westlake.edu.cn/">Donglin Wang</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <p class="author-block"><sup>1</sup>MiLAB, Westlake University    </p>
+            <p class="author-block"><sup>2</sup>Zhejiang University    </p>
+          </div>
+
+          <div class="is-size-4"> ECCV 2024</div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2312.14457"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2312.14457"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="xxx"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (Coming Soon)</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://pan.baidu.com/s/1Gu9Xlb_ETbqxtSaVky0d3Q?pwd=ok0h"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="far fa-images"></i>
+                </span>
+                  <span>Data</span>
+                </a>
+            </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- video -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body" style="padding:1rem 0rem">
+      <div class="columns is-centered">
+          <!-- Teaser description -->
+          <div class="content has-text-centered">
+            <h1 class="title">Overview</h1>
+            <div class="has-text-centered" style="max-width:80%;margin:25px auto">
+                <img src="./quart/image/overview.png" alt="QUART Framework" class="image is-fullwidth">
+            </div>
+            <p class="has-text-justified">
+                We propose <strong>QUA</strong>druped <strong>R</strong>obotic <strong>T</strong>ransformer (QUART), a VLA model to integrate visual information
+                and instructions from diverse modalities as input and generates executable actions for real-world robots and present QUAdruped Robot Dataset (QUARD), a large-scale multi-task dataset including perception, navigation and advanced capability like whole-body manipulation
+                tasks for training QUART model. Our extensive evaluation shows that
+                our approach leads to performant robotic policies and enables QUART
+                to obtain a range of generalization capabilities.
+            </p>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="section" style="padding:0rem 1.5rem 3rem 1.5rem">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <h2 class="title is-3 has-text-centered">Dataset</h2>
+          <div class="has-text-centered">
+            <img src="./quart/image/QUARD2.png" alt="QUART Framework" class="image is-fullwidth" style="width:75%;margin:auto">
+          </div>
+          <div class="has-text-centered">
+            <img src="./quart/image/QUARD.png" alt="QUART Framework" class="image is-fullwidth" style="width:90%;margin:auto">
+          </div>
+          <p class="content has-text-justified mt-4" style="font-size:15.3px">
+            We collect a large-scale multi-task dataset <strong>QUA</strong>druped <strong>R</strong>obot <strong>D</strong>ataset (QUARD). It includes multiple tasks such as
+            perception, navigation, and advanced capabilities like object avoidance. To the best of our knowledge, this is the first quadruped robot dataset that incorporates 
+            a significant amount of vision, language instruction, and robot command
+            data. As collecting data on real robots is expensive and inefficient,
+            we primarily rely on data generated in simulation, which exhibits significant differences in
+            visual, sensor, and system dynamics.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <h2 class="title is-3 has-text-centered">QUART Framework</h2>
+          <div class="has-text-centered">
+            <img src="./quart/image/Architecture.jpg" alt="QUART Framework" class="image is-fullwidth" style="width:70%;margin:auto">
+          </div>
+          <p class="content has-text-justified mt-4">
+            The architecture of <span class='quart'>QUART</span>
+             is designed to leverage the scene comprehension capability of a pretrained MLLM. 
+            It receives visual information as observation, and outputs an action representing the actual 
+            action taken by the robot based on text-form instructions, and de-tokenizes it into specific 
+            action values. QUART can generate a complete action sequence at a processing rate of
+             2Hz in actual scenarios, and hand it over to the underlying low-level strategy for execution.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <h2 class="title is-3 has-text-centered">Effectiveness in seen and unseen scenes</h2>
+          <p>We show both simulation and real scenarios of all six tasks:
+            Go to, Distinguish, Go through, Crawl, Go avoid and Unload .</p>
+          <!-- Placeholder for bar chart -->
+            <img src="./quart/image/SR.jpg" style="width:100%; padding:auto">
+
+
+            <!--  sim Row 1 -->
+            <h3 class="title is-4 mt-2 has-text-centered">Distinguish</h3>
+            <div class="columns is-multiline is-variable is-2" style="justify-content: center">
+                <div class="column is-5">
+                <video style="max-width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
+                    <source src="./quart/video/distinguish_sim.mp4" type="video/mp4">
+                </video>
+                </div>
+
+                <div class="column is-5">
+                <video style="max-width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
+                    <source src="./quart/video/distinguish_letter_A.mp4" type="video/mp4">
+                </video>
+                </div>
+            </div>
+            <!--  sim Row 2 -->
+            <h3 class="title is-4 mt-2 has-text-centered">Go to</h3>
+            <div class="columns is-multiline is-variable is-2" style="justify-content: center">
+                <div class="column is-5">
+                <video style="max-width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
+                    <source src="./quart/video/goto_sim.mp4" type="video/mp4">
+                </video>
+                </div>
+
+                <div class="column is-5">
+                <video style="max-width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
+                    <source src="./quart/video/goto_real.mp4" type="video/mp4">
+                </video>
+                </div>
+            </div>
+          <!--  sim Row 3 -->
+                    <!--  sim Row 1 -->
+            <h3 class="title is-4 mt-2 has-text-centered">Go through</h3>
+            <div class="columns is-multiline is-variable is-2" style="justify-content: center">
+                <div class="column is-5">
+                <video style="max-width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
+                    <source src="./quart/video/sim_go_through.mp4" type="video/mp4">
+                </video>
+                </div>
+    
+                <div class="column is-5">
+                <video style="max-width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
+                    <source src="./quart/video/go_through_square.mp4" type="video/mp4">
+                </video>
+                </div>
+            </div>
+
+            <h3 class="title is-4 mt-2 has-text-centered">Crawl</h3>
+            <div class="columns is-multiline is-variable is-2" style="justify-content: center">
+                <div class="column is-5">
+                <video style="max-width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
+                    <source src="./quart/video/crawl_sim.mp4" type="video/mp4">
+                </video>
+                </div>
+    
+                <div class="column is-5">
+                <video style="max-width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
+                    <source src="./quart/video/crawl_2_1.mp4" type="video/mp4">
+                </video>
+                </div>
+            </div>
+            
+            <h3 class="title is-4 mt-2 has-text-centered">Go avoid</h3>
+            <div class="columns is-multiline is-variable is-2" style="justify-content: center">
+                <div class="column is-5">
+                <video style="max-width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
+                    <source src="./quart/video/avoid_sim.mp4" type="video/mp4">
+                </video>
+                </div>
+    
+                <div class="column is-5">
+                <video style="max-width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
+                    <source src="./quart/video/avoid_real.mp4" type="video/mp4">
+                </video>
+                </div>
+            </div>
+
+            <h3 class="title is-4 mt-2 has-text-centered">Go avoid</h3>
+            <div class="columns is-multiline is-variable is-2" style="justify-content: center">
+                <div class="column is-5">
+                <video style="max-width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
+                    <source src="./quart/video/unload_sim.mp4" type="video/mp4">
+                </video>
+                </div>
+    
+                <div class="column is-5">
+                <video style="max-width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
+                    <source src="./quart/video/unload_real.mp4" type="video/mp4">
+                </video>
+                </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <section class="section">
+    <h2 class="title is-3 has-text-centered" style="margin-bottom:0px">Sim2Real transfer capabilities</h2>
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full">
+            <div class="columns is-centered">
+            <p class="content has-text-justified mt-4">We here show results in different sim2real 
+                training paradigms and failure case analysis.</p>
+            </div>
+        <div class="columns is-multiline is-variable is-2" style="justify-content: center">
+            <div class="column is-5">
+            <video style="max-width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
+                <source src="./quart/video/simreal1.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered">1. Simulation + Real Data</p>
+            </div>
+
+            <div class="column is-5">
+            <video style="max-width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
+                <source src="./quart/video/simreal2.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered">2. 10% Simulation + Real Data</p>
+            </div>
+        </div>
+
+        <div class="columns is-multiline is-variable is-2" style="justify-content: center">
+            <div class="column is-5">
+            <video style="max-width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
+                <source src="./quart/video/simreal3.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered">3. Simulation Data</p>
+            </div>
+
+            <div class="column is-5">
+            <video style="max-width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
+                <source src="./quart/video/simreal4.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered">4. Real Data</p>
+            </div>
+        </div>
+    </div>
+    </div>
+  </div>
+  </section>
+
+
+
+
+
+  <section class="section">
+    <h2 class="title is-3 has-text-centered" style="margin-bottom:0px">Rubustness in different localization</h2>
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full">
+            <div class="columns is-centered">
+            <p class="content has-text-justified mt-4">We compare the results in different initial localization,
+                it shows that our model is robust to different initial localization.</p>
+            </div>
+        <div class="columns is-multiline is-variable is-2" style="justify-content: center">
+            <div class="column is-one-third">
+            <video style="max-width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
+                <source src="./quart/video/robust1.mp4" type="video/mp4">
+            </video>
+            </div>
+
+            <div class="column is-one-third">
+            <video style="max-width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
+                <source src="./quart/video/robust2.mp4" type="video/mp4">
+            </video>
+            </div>
+
+            <div class="column is-one-third">
+                <video style="max-width:100%; height:auto;" controls muted loading="lazy" autoplay loop playsinline>
+                    <source src="./quart/video/robust3.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+    </div>
+    </div>
+  </div>
+  </section>
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{tong2024quartonline,
+        title={QUAR-VLA: Vision-Language-Action Model for Quadruped Robots},
+        author={Ding, Pengxiang and Zhao, Han and Wang, Zhitao and Wei, Zhenyu and Lyu, Shangke and Wang, Donglin},
+        journal={ECCV},
+        year={2024}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/Quart_Online.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Page template borrowed from 
+            <a href="https://github.com/nerfies/nerfies.github.io">
+              <span class="quart">Nerfies</span>
+            </a>
+            and
+            <a href="https://rdt-robotics.github.io/rdt-robotics/">
+              <span class="quart">RDT</span>
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
